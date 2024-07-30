@@ -1,0 +1,14 @@
+{
+  "name": "@react-native-oh-tpl/react-native-network-info",
+  "version": "5.2.1",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": 'file:../react_native_openharmony'
+  },
+  "overrides": {
+    "@rnoh/react-native-openharmony": "./react_native_openharmony"
+  }
+}

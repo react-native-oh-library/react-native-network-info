@@ -1,47 +1,48 @@
 "use strict";
 
-import { NativeModules, Platform } from "react-native";
-const { RNNetworkInfo } = NativeModules;
+import { NativeModules, Platform, TurboModuleRegistry } from "react-native";
+
+const NetworkInfoNativeModule = TurboModuleRegistry ? TurboModuleRegistry.get('NetworkInfoNativeModule') : NativeModules.NetworkInfoNativeModule
 
 const NetworkInfo = {
   async getSSID() {
-    return await RNNetworkInfo.getSSID();
+    return await NetworkInfoNativeModule.getSSID();
   },
 
   async getBSSID() {
-    return await RNNetworkInfo.getBSSID();
+    return await NetworkInfoNativeModule.getBSSID();
   },
 
   async getBroadcast() {
-    return await RNNetworkInfo.getBroadcast();
+    return await NetworkInfoNativeModule.getBroadcast();
   },
 
   async getIPAddress() {
-    return await RNNetworkInfo.getIPAddress();
+    return await NetworkInfoNativeModule.getIPAddress();
   },
 
   async getIPV4Address() {
-    const wifiIP = await RNNetworkInfo.getWIFIIPV4Address();
+    const wifiIP = await NetworkInfoNativeModule.getWIFIIPV4Address();
     if (wifiIP && wifiIP !== '0.0.0.0') {
       return wifiIP;
     }
     
-    return await RNNetworkInfo.getIPV4Address();
+    return await NetworkInfoNativeModule.getIPV4Address();
   },
 
   async getGatewayIPAddress() {
-    return await RNNetworkInfo.getGatewayIPAddress();
+    return await NetworkInfoNativeModule.getGatewayIPAddress();
   },
 
   async getSubnet() {
-    return await RNNetworkInfo.getSubnet();
+    return await NetworkInfoNativeModule.getSubnet();
   },
 
   async getFrequency() {
-    if (Platform.OS !== 'android') {
-      return null;
+    if (Platform.OS === 'android' || Platform.OS === 'harmony') {
+      return await NetworkInfoNativeModule.getFrequency();
     }
-    return await RNNetworkInfo.getFrequency();
+    return null;
   }
 };
 
