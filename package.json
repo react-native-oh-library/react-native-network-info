@@ -1,6 +1,6 @@
 {
   "name": "@react-native-oh-tpl/react-native-network-info",
-  "version": "5.2.1",
+  "version": "5.2.1-0.0.1",
   "description": "Get local network information",
   "main": "NetworkInfo.js",
   "types": "NetworkInfo.d.ts",
@@ -15,7 +15,7 @@
         "./src"
       ]
     }
-  },  
+  },
   "keywords": [
     "react-component",
     "react-native",
