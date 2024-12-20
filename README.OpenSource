@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-network-info",
+        "License": "MIT License",
+        "License File": "https://github.com/pusherman/react-native-network-info/blob/master/LICENSE",
+        "Version Number": "5.2.1",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/pusherman/react-native-network-info",
+        "Description": " Get local network information"
+    }
+]
